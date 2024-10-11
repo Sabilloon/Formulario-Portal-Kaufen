@@ -7,6 +7,8 @@
 
 body {
     background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -19,7 +21,7 @@ body {
 }
 
 .header {
-    text-align: center;
+    text-align: relative;
     margin-bottom: 20px;
     color: #e6007e;
 }
@@ -29,9 +31,31 @@ body {
     font-weight: bold;
 }
 
+.banner img{
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+.logo{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logo img{
+    height: 60px;
+    width: auto;
+}
+
+
 .header-info {
     margin-top: 10px;
     font-size: 16px;
+}
+
+.title{
+    color: #e6007e;
 }
 
 form {
