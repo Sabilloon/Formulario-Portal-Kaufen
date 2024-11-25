@@ -9,17 +9,22 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    min-height: 100vh; /* Ocupar toda la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrar verticalmente */
 }
 
+/* Estilo para el contenedor del formulario */
 .container {
-    width: 70%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* Aumentar padding */
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    width: 100%;
+    max-width: 1600px; /* Limitar el ancho máximo */
+    margin: auto; /* Centrar horizontalmente */
 }
-
 .header {
     text-align: relative;
     margin-bottom: 20px;
@@ -31,75 +36,173 @@ body {
     font-weight: bold;
 }
 
-.banner img{
+.banner img {
     height: auto;
     width: 100%;
     display: block;
 }
 
-.logo{
+.logo {
     position: absolute;
     top: 10px;
     right: 10px;
 }
 
-.logo img{
+.logo img {
     height: 60px;
     width: auto;
 }
-
 
 .header-info {
     margin-top: 10px;
     font-size: 16px;
 }
 
-.title{
-    color: #e6007e;
+.title h1 {
+    font-size: 28px; /* Aumentar tamaño del título */
+    color: #2D4F67; /* Color del título */
+    text-align: center; /* Centrar el título */
 }
+
 
 form {
     margin-top: 20px;
 }
 
+/* Estilo para los encabezados de sección */
 h2 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #e6007e;
-    text-decoration: underline;
+    margin-bottom: 15px;
+    font-size: 24px; /* Tamaño del encabezado */
+    color: #2D4F67; /* Color del encabezado */
+    border-bottom: 2px solid #e6007e; /* Línea debajo del encabezado */
+    padding-bottom: 5px; /* Espacio debajo del texto */
 }
 
+/* Ajustar el estilo de los labels y inputs para eliminar el espacio entre ellos */
 .form-group {
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+    flex-wrap: wrap; /* Permitir que los elementos bajen a otra línea si no caben */
+    justify-content: space-between; /* Espacio uniforme entre los elementos */
+    align-items: center; /* Centrar verticalmente todos los elementos */
+    margin-bottom: 15px; /* Espaciado entre grupos */
 }
-
 .form-group label {
-    flex: 1;
-    margin-right: 10px;
+    flex: 0 0 auto; /* Evitar que el label crezca o se reduzca */
+    margin-right: 10px; /* Espacio entre el label y el input */
 }
 
-.form-group input,
+
+/* Estilo común para inputs y selects */
+.form-group input {
+    flex: 2; /* Toma 2 partes del espacio disponible */
+    padding: 5px; /* Ajustar padding para nivelar con el label */
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+    width: 50%; /* Asegurarse de que el input ocupe todo el ancho */
+
+}
+
 .form-group select {
-    flex: 2;
-    padding: 5px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    flex: 2; /* Toma 2 partes del espacio disponible */
+    padding: 5px; /* Padding para nivelar con el label */
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    margin: 0; /* Quitar márgenes izquierdo y derecho */
+    font-size: 16px;
+    outline: none;
+    width: 100%; /* Asegurarse de que el input ocupe todo el ancho */
+    margin-left: 3%;
 }
 
-.radio-group, .checkbox-group {
+/* Ajusta los selects */
+.form-group select {
+    -webkit-appearance: none; /* Estilo de apariencia para navegadores webkit */
+    -moz-appearance: none; /* Estilo de apariencia para navegadores Firefox */
+    appearance: none; /* Eliminar el estilo de selección por defecto */
+}
+
+.radio-group {
     display: flex;
     align-items: center;
+    gap: 10px; /* Espaciado uniforme entre los botones y labels */
 }
 
-input[type="radio"], input[type="checkbox"] {
-    margin-right: 5px;
+.radio-group input[type="radio"] {
+    display: inline-block; /* Mostrar los radio buttons */
+    margin-right: 5px; /* Ajustar espacio entre el botón y el texto */
 }
+
+.radio-group label {
+    position: static; /* No necesitamos posicionar absolutamente los labels aquí */
+    padding-left: 0; /* Remover espacio adicional */
+    cursor: pointer;
+}
+
 
 .firma {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 18px;
+    font-size: 16px; /* Tamaño de fuente */
+    margin-top: 40px; /* Espacio superior */
+    text-align: left; /* Alinear a la izquierda */
+}
+
+.checkbox-group {
+    display: flex; /* Alinear el checkbox y el label en una fila */
+    align-items: center; /* Alinear verticalmente */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-left: 10px; /* Espacio a la izquierda del checkbox */
+}
+
+.note {
+    display: block; /* Asegura que el texto ocupe toda la línea */
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    color: #888; /* Color gris para el texto */
+    margin-top: 5px; /* Espacio entre el input y el texto */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Sombra del texto */
+}
+
+/* Para pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reducir padding en dispositivos pequeños */
+        width: 95%; /* Ocupa casi todo el ancho de la pantalla */
+    }
+
+    .form-group {
+        flex-direction: column; /* Cambiar a diseño en columna */
+        align-items: stretch; /* Alinear al inicio de la columna */
+    }
+
+    .form-group label,
+    .form-group input,
+    .form-group select {
+        width: 100%; /* Asegurar que ocupen todo el ancho */
+        margin: 5px 0; /* Espaciado entre los elementos */
+    }
+
+    .radio-group {
+        flex-direction: column; /* Colocar radio buttons en columna */
+    }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: 80%; /* Hacer el contenedor más ancho */
+    }
+
+    .form-group {
+        flex-direction: row; /* Mantener el diseño en fila */
+    }
+
+    .form-group label,
+    .form-group input {
+        width: 50%; /* Ajustar ancho proporcional */
+    }
 }

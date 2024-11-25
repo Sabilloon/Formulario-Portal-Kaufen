@@ -1,0 +1,24 @@
+.input-group {
+    position: relative;
+    margin-top: 10px; /* Espacio superior */
+}
+
+.placeholder {
+    position: absolute;
+    left: 10px; /* Ajusta según sea necesario */
+    top: 50%;
+    transform: translateY(-50%); /* Centrar verticalmente */
+    color: #999; /* Color del placeholder */
+    pointer-events: none; /* Evitar que el label sea clickeable */
+}
+
+input[type="text"] {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del input */
+    width: 100%; /* Ancho completo */
+}
+
+input[type="text"]:focus + .placeholder,
+input[type="text"]:not(:placeholder-shown) + .placeholder {
+    display: none; /* Ocultar el placeholder cuando el input tiene foco o no está vacío */
+}
